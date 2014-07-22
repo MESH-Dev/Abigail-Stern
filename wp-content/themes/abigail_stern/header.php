@@ -4,14 +4,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php wp_title(); ?></title>
   <?php wp_head(); ?>
+  <link rel='stylesheet'  href='<?php bloginfo("template_url") ?>/style.css' type='text/css' media='all' />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+
 </head>
 <body <?php body_class(); ?>>
 <header>
-  <div class="container">
+
     <div class="gutter cf">
-      <div id="logo">
-          <a href="<?php echo home_url(); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /></a>
-      </div>
+      <div id="logo"><a href="<?php echo get_bloginfo('url') ?>"><?php echo get_bloginfo('name') ?></a></div>
       <div id="mainNav">
         <?php if(has_nav_menu('main_nav')){
             $defaults = array(
@@ -37,5 +42,5 @@
           } ?>
       </div>
     </div>
-  </div>
+
 </header>
