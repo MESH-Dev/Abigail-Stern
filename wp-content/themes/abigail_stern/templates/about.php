@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: About
+Template Name: Text
 */
 
 ?>
@@ -8,6 +8,14 @@ Template Name: About
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
+<style>
+
+    body {
+        background: #e9e9e9;
+    }
+
+</style>
 
 <div class="container text">
     <div class="four-fifths">
