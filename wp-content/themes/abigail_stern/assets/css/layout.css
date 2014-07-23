@@ -63,7 +63,7 @@ header{
   header .container{border-bottom:1px solid #bdc3c7;}
   header .gutter{padding:20px 0px;}
   header #logo{
-      width:29%;
+      width:390px;
       float:left;
       background-color: #2e2e2e;
       font-family: 'Roboto Condensed', sans-serif;
@@ -81,7 +81,7 @@ header{
       color: #ffffff;
   }
 
-  header #mainNav{width:40%;float:left; padding-left: 30px; }
+  header #mainNav{width:500px;float:left; padding-left: 30px; }
     #mainNav ul{float:left; background: #2e2e2e; height: 50px;}
       #mainNav ul li{float:left;position:relative;display:block; }
         #mainNav ul li a{color:#fff;background:#2e2e2e;text-decoration:none;padding:10px 20px;transition:0.2s all;-webkit-transition:0.2s all;-moz-transition:0.2s all;-ms-transition:0.2s all;-o-transition:0.2s all;float:left; height: 30px; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; }
@@ -184,14 +184,14 @@ body.home #contentSecondary{width:25%;float:right;}
 ========= */
 
 .sidebar {
-    width: 20%;
+    width: 320px;
     float: left;
     margin-top: 70px;
 }
 
 
 .category {
-    width: 50%;
+    width: 120px;
     margin-top: 10px;
     color:#fff;
     background:#2e2e2e;
@@ -210,6 +210,14 @@ body.home #contentSecondary{width:25%;float:right;}
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.category:hover {
+    background: #4fc7b9;
+}
+
+.category a {
+    color: #fff;
 }
 
 /* ==========
