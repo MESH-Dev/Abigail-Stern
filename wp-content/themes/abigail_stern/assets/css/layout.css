@@ -211,6 +211,7 @@ body.home #contentSecondary{width:25%;float:right;}
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 .category:hover {
@@ -238,7 +239,6 @@ body.home #contentSecondary{width:25%;float:right;}
     padding: 15px;
     color: #fff;
     text-decoration: none;
-    display: none;
 }
 
 #project-details h3 {
@@ -253,7 +253,7 @@ body.home #contentSecondary{width:25%;float:right;}
 
 #project-thumbnails {
     width: 160px;
-    height: 185px;
+    height: 195px;
     float: right;
     background-color: #2e2e2e;
     padding: 5px;
@@ -263,17 +263,18 @@ body.home #contentSecondary{width:25%;float:right;}
 
 .project-thumbnail {
     width: 70px;
-    height: 63px;
+    height: 70px;
     background-color: #fff;
     float: left;
     margin: 5px;
+    cursor: pointer;
 }
 
 .left-arrow {
     color: #fff;
     float: left;
-    margin: 10px;
-    width: 30px;
+    margin: 10px 0px;
+    cursor: pointer;
 }
 
 .left-arrow a {
@@ -284,8 +285,9 @@ body.home #contentSecondary{width:25%;float:right;}
     color: #fff;
     float: right;
     margin: 10px;
-    width: 30px;
+
     text-align: right;
+    cursor: pointer;
 }
 
 .right-arrow a {
