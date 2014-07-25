@@ -1,14 +1,9 @@
 <?php
   //enqueue scripts and styles *use production assets. Dev assets are located in assets/css and assets/js
   function WPS_scripts() {
-  	wp_enqueue_style( 'WPS-script', get_template_directory_uri().'/assets/prod/production.min.css' );
-  	wp_enqueue_script( 'ASternScript', get_template_directory_uri().'/assets/js/WPStarter.js', array('jquery'), '1.0.0', true );
-
-    $translation_array = array(
-        'ajaxURL' => admin_url('admin-ajax.php')
-    );
-    wp_localize_script( 'ASternScript', 'AStern', $translation_array );
-
+    wp_enqueue_style( 'WPS-script', get_template_directory_uri().'/assets/prod/production.min.css' );
+    wp_enqueue_script( 'ASternScript', get_template_directory_uri().'/assets/js/WPStarter.js', array('jquery'), '1.0.0', true );
+    wp_localize_script( 'ASternScript', 'AStern', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
     wp_enqueue_style('font-awesome',get_template_directory_uri().'/assets/libs/font-awesome-4.1.0/css/font-awesome.min.css');
   }
   add_action( 'wp_enqueue_scripts', 'WPS_scripts' );
