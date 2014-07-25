@@ -3,5 +3,5 @@ jQuery(document).ready(function($){
   console.log('hell yeah!');
 
   //Let's do something awesome!
-  
+  console.log(AStern);
 });

@@ -10,7 +10,6 @@ Template Name: Portfolio
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php wp_title(); ?></title>
-  <?php wp_head(); ?>
   <link rel='stylesheet'  href='<?php bloginfo("template_url") ?>/style.css' type='text/css' media='all' />
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
@@ -24,7 +23,7 @@ Template Name: Portfolio
   <script src='<?php bloginfo("template_url") ?>/assets/js/jquery.easing.min.js'></script>
   <script src='<?php bloginfo("template_url") ?>/assets/js/supersized.3.2.7.js'></script>
   <script src='<?php bloginfo("template_url") ?>/assets/js/supersized.shutter.min.js'></script>
-
+  <?php wp_head(); ?>
 
 
 </head>
@@ -135,7 +134,7 @@ Template Name: Portfolio
                       vertical_center         :   1,			// Vertically center background
                       horizontal_center       :   1,			// Horizontally center background
                       fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
-                      fit_portrait         	:   1,			// Portrait images will not exceed browser height
+                      fit_portrait         	:   0,			// Portrait images will not exceed browser height
                       fit_landscape			:   0,			// Landscape images will not exceed browser width
 
                       // Components

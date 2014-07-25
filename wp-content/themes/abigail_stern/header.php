@@ -5,8 +5,10 @@
   <title><?php wp_title(); ?></title>
   <?php wp_head(); ?>
   <link rel='stylesheet'  href='<?php bloginfo("template_url") ?>/style.css' type='text/css' media='all' />
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+
+  <link rel='stylesheet'  href='<?php bloginfo("template_url"); ?>/assets/css/supersized.css' type='text/css' media='all' />
+  <link rel='stylesheet'  href='<?php bloginfo("template_url"); ?>/assets/css/supersized.shutter.css' type='text/css' media='all' />
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
@@ -41,6 +43,13 @@
             echo "<p><em>main_nav</em> doesn't exist! Create it and it'll render here.</p>";
           } ?>
       </div>
+
+      <?php
+          if ( basename( get_page_template() ) == 'projects.php' ) {
+               get_template_part( 'partials/project', 'header' );
+          }
+      ?>
+
     </div>
 
 </header>

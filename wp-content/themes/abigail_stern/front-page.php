@@ -62,3 +62,5 @@
     <div id="pause" class="control" onclick="playPause()"><i class="fa fa-pause fa-2x"></i></div>
     <div id="play" class="control" onclick="playPause()"><i class="fa fa-play fa-2x"></i></div>
 </div>
+
+<?php get_footer(); ?>
