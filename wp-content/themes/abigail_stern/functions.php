@@ -1,7 +1,7 @@
 <?php
   //enqueue scripts and styles *use production assets. Dev assets are located in assets/css and assets/js
   function WPS_scripts() {
-    wp_enqueue_style( 'WPS-script', get_template_directory_uri().'/assets/prod/production.min.css' );
+    wp_enqueue_style( 'WPS-script', get_template_directory_uri().'/assets/js/production.min.css' );
     wp_enqueue_script( 'ASternScript', get_template_directory_uri().'/assets/js/WPStarter.js', array('jquery'), '1.0.0', true );
     wp_localize_script( 'ASternScript', 'AStern', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
     wp_enqueue_style('font-awesome',get_template_directory_uri().'/assets/libs/font-awesome-4.1.0/css/font-awesome.min.css');
@@ -49,5 +49,20 @@
 
   //disable code editors
   define('DISALLOW_FILE_EDIT', true);
+
+
+
+add_action( 'wp_ajax_my_action', 'portfolio_ajax' );
+add_action( 'wp_ajax_nopriv_my_action', 'portfolio_ajax' );
+
+function portfolio_ajax() {
+    $nextID = $_POST['nextID'];
+
+    $post = get_post($nextID);
+
+    echo $post;
+
+	die(); // this is required to return a proper result
+}
 
 ?>
