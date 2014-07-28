@@ -1,8 +1,8 @@
 <div id="project-controls">
-    <div class="control"><i class="fa fa-angle-right fa-2x"></i></div>
-    <div class="control"><i class="fa fa-angle-left fa-2x"></i></div>
-    <div class="control thumbnails"><i class="fa fa-plus fa-2x"></i><i class="fa fa-minus fa-2x"></i></div>
-    <div class="control description"><i class="fa fa-th-large fa-2x"></i><i class="fa fa-stop fa-2x"></i></div>
+    <div class="control"><a href="<?php siblings('after'); ?>"><img class="rightarrow" src="<?php bloginfo('template_url') ?>/assets/icons/righttarrow.png" /></a></div>
+    <div class="control"><a href="<?php siblings('before'); ?>"><img class="leftarrow" src="<?php bloginfo('template_url') ?>/assets/icons/leftarrow.png" /></a></div>
+    <div class="control thumbnails"><img class="plus" src="<?php bloginfo('template_url') ?>/assets/icons/plus.png" /><img class="minus" src="<?php bloginfo('template_url') ?>/assets/icons/minus.png" /></div>
+    <div class="control description"><img class="grid" src="<?php bloginfo('template_url') ?>/assets/icons/grid.png" /><img class="square" src="<?php bloginfo('template_url') ?>/assets/icons/square.png" /></div>
 </div>
 <div style="clear: both; height: 10px;"></div>
 <div id="project-details">

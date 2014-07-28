@@ -47,7 +47,9 @@
 /* ==========
   Common
 ========= */
-html, body{}
+html, body{
+    height: 100%;
+}
 .container{width:960px;margin:0 auto;}
 img{max-width:100%;height:auto;}
 
@@ -86,6 +88,7 @@ header{
     #mainNav ul{float:left; background: #2e2e2e; height: 50px;}
       #mainNav ul li{float:left;position:relative;display:block; }
         #mainNav ul li a{color:#fff;background:#2e2e2e;text-decoration:none;padding:10px 20px;transition:0.2s all;-webkit-transition:0.2s all;-moz-transition:0.2s all;-ms-transition:0.2s all;-o-transition:0.2s all;float:left; height: 30px; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; }
+        #mainNav ul li.current-menu-item a { background: #4fc7b9; }
           #mainNav ul li a:hover{background:#4fc7b9;color:#ffffff; opacity: 1;}
           #mainNav ul li a:active{background:#4fc7b9;color:#ffffff;}
     #mainNav ul ul{display:none;position:absolute;left:0;top:100%;}
@@ -143,6 +146,7 @@ body.home #contentSecondary{width:25%;float:right;}
 
 .control {
     padding: 10px;
+    height: 30px;
     width: 30px;
     color: #ffffff;
     background-color: #2e2e2e;

@@ -1,11 +1,23 @@
 <?php
   //enqueue scripts and styles *use production assets. Dev assets are located in assets/css and assets/js
   function WPS_scripts() {
-    wp_enqueue_style( 'WPS-script', get_template_directory_uri().'/assets/js/production.min.css' );
+    // wp_enqueue_style( 'WPS-script', get_template_directory_uri().'/assets/js/production.min.css' );
     wp_enqueue_script( 'ASternScript', get_template_directory_uri().'/assets/js/WPStarter.js', array('jquery'), '1.0.0', true );
     wp_localize_script( 'ASternScript', 'AStern', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
     wp_enqueue_style('font-awesome',get_template_directory_uri().'/assets/libs/font-awesome-4.1.0/css/font-awesome.min.css');
+
+    wp_enqueue_script( 'AllScript', get_template_directory_uri().'/assets/js/custom.js', array(), '1.0.0', true);
+
+    if ( basename( get_page_template() ) == 'projects.php' ) {
+         wp_enqueue_script( 'ProjectScript', get_template_directory_uri().'/assets/js/custom-project.js', array(), '1.0.0', true);
+    };
+
+    if ( basename( get_page_template() ) == 'portfolio.php' ) {
+         wp_enqueue_script( 'PortfolioScript', get_template_directory_uri().'/assets/js/custom-portfolio.js', array(), '1.0.0', true);
+    };
+
   }
+
   add_action( 'wp_enqueue_scripts', 'WPS_scripts' );
 
   //theme supports
@@ -50,7 +62,18 @@
   //disable code editors
   define('DISALLOW_FILE_EDIT', true);
 
+function siblings($link) {
+    global $post;
+    $siblings = get_pages('child_of='.$post->post_parent.'&parent='.$post->post_parent);
+    foreach ($siblings as $key=>$sibling){
+        if ($post->ID == $sibling->ID){
+            $ID = $key;
+        }
+    }
+    $closest = array('before'=>get_permalink($siblings[$ID-1]->ID),'after'=>get_permalink($siblings[$ID+1]->ID));
 
+    if ($link == 'before' || $link == 'after') { echo $closest[$link]; } else { return $closest; }
+}
 
 add_action( 'wp_ajax_my_action', 'portfolio_ajax' );
 add_action( 'wp_ajax_nopriv_my_action', 'portfolio_ajax' );
