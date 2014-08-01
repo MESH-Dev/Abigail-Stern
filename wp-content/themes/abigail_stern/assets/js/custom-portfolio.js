@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
               random					: 	0,			// Randomize slide order (Ignores start slide)
               slide_interval          :   3000,		// Length between transitions
               transition              :   6, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-              transition_speed		:	1000,		// Speed of transition
+              transition_speed		:	10000,		// Speed of transition
               new_window				:	1,			// Image links open in new window/tab
               pause_hover             :   0,			// Pause slideshow on hover
               keyboard_nav            :   1,			// Keyboard navigation on/off
@@ -53,14 +53,50 @@ jQuery(document).ready(function($){
 
     $(".swim").click(function(){
       api.goTo(1);
+      $("div.swim").addClass("open");
+      $("div.lingerie").removeClass("open");
+      $("div.outerwear").removeClass("open");
     });
 
     $(".lingerie").click(function(){
       api.goTo(2);
+      $("div.lingerie").addClass("open");
+      $("div.swim").removeClass("open");
+      $("div.outerwear").removeClass("open");
     });
 
     $(".outerwear").click(function(){
       api.goTo(3);
+      $("div.outerwear").addClass("open");
+      $("div.swim").removeClass("open");
+      $("div.lingerie").removeClass("open");
+    });
+
+    // Figure out how to add open class to next category
+
+    $("#nextslide").click(function(){
+        $curr = $(".open").next();
+        $(".open").removeClass("open");
+
+        if ($curr.length) {
+            $curr.addClass("open");
+        } else {
+            $(".category:first").addClass("open");
+        }
+    });
+
+    $("#prevslide").click(function(){
+        $curr = $(".open").prev();
+        $(".open").removeClass("open");
+
+        $curr.addClass("open");
+
+        if ($curr.length) {
+            $curr.addClass("open");
+        } else {
+            $(".category:last").addClass("open");
+        }
+        console.log($curr.length);
     });
 
 });

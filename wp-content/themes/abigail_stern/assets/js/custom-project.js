@@ -28,11 +28,11 @@ jQuery(document).ready(function($){
 
             // Size & Position
             min_width		        :   1,			// Min width allowed (in pixels)
-            min_height		        :   0,			// Min height allowed (in pixels)
+            min_height		        :   1,			// Min height allowed (in pixels)
             vertical_center         :   1,			// Vertically center background
             horizontal_center       :   1,			// Horizontally center background
             fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
-            fit_portrait         	:   0,			// Portrait images will not exceed browser height
+            fit_portrait         	:   1,			// Portrait images will not exceed browser height
             fit_landscape			:   0,			// Landscape images will not exceed browser width
 
             // Components
@@ -68,12 +68,12 @@ jQuery(document).ready(function($){
 
 
     $(".plus").hide();
-    $("#project-thumbnails").hide();
+    $(".project-thumbnails").hide();
 
     $(".thumbnails").click(function(){
         $(".plus").toggle();
         $(".minus").toggle();
-        $("#project-details").toggle("show", function(){});
+        $(".project-details").toggle("show", function(){});
     });
 
     $(".square").hide();
@@ -81,6 +81,6 @@ jQuery(document).ready(function($){
     $(".description").click(function(){
         $(".square").toggle();
         $(".grid").toggle();
-        $("#project-thumbnails").toggle("show", function(){});
+        $(".project-thumbnails").toggle("show", function(){});
     });
 });

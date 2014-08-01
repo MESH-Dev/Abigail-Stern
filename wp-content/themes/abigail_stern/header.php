@@ -44,7 +44,7 @@
       </div>
 
       <?php
-          if ( basename( get_page_template() ) == 'projects.php' ) {
+          if ( is_single() ) {
                get_template_part( 'partials/project', 'header' );
           }
       ?>

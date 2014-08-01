@@ -84,7 +84,7 @@ header{
       opacity: 1;
   }
 
-  header #mainNav{width:500px;float:left; padding-left: 30px; }
+  header #mainNav{width:510px;float:left; padding-left: 30px; }
     #mainNav ul{float:left; background: #2e2e2e; height: 50px;}
       #mainNav ul li{float:left;position:relative;display:block; }
         #mainNav ul li a{color:#fff;background:#2e2e2e;text-decoration:none;padding:10px 20px;transition:0.2s all;-webkit-transition:0.2s all;-moz-transition:0.2s all;-ms-transition:0.2s all;-o-transition:0.2s all;float:left; height: 30px; font-size: 18px; text-transform: uppercase; letter-spacing: 2px; }
@@ -227,6 +227,10 @@ body.home #contentSecondary{width:25%;float:right;}
     color: #fff;
 }
 
+.open {
+    background: #4fc7b9;
+}
+
 /* ==========
   Project Page
 ========= */
@@ -237,7 +241,7 @@ body.home #contentSecondary{width:25%;float:right;}
     float: right;
 }
 
-#project-details {
+.project-details {
     width: 240px;
     float: right;
     background-color: #2e2e2e;
@@ -246,17 +250,17 @@ body.home #contentSecondary{width:25%;float:right;}
     text-decoration: none;
 }
 
-#project-details h3 {
+.project-details h3 {
     color: #fff;
     font-weight: 400;
 }
 
-#project-details p {
+.project-details p {
     padding-top: 10px;
     color: #fff;
 }
 
-#project-thumbnails {
+.project-thumbnails {
     width: 160px;
     height: 195px;
     float: right;
@@ -302,8 +306,9 @@ body.home #contentSecondary{width:25%;float:right;}
 /* ==========
   Common
 ========= */
-
-
+#supersized-loader {
+    display: none;
+}
 
 /* ==========
   Footer

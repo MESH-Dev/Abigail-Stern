@@ -298,7 +298,7 @@
 
 			// Adjust image when browser is resized
 			$(window).resize(function(){
-	    		base.resizeNow();
+	    		// base.resizeNow();
 			});
 
     	};
@@ -326,8 +326,10 @@
 							resizeWidth();
 						} else {
 							resizeHeight();
+
 						}
 					}else{	// Normal Resize
+
 						if ((browserheight <= base.options.min_height) && (browserwidth <= base.options.min_width)){	// If window smaller than minimum width and height
 
 							if ((browserheight/browserwidth) > ratio){
@@ -338,6 +340,7 @@
 
 						} else if (browserwidth <= base.options.min_width){		// If window only smaller than minimum width
 
+
 							if ((browserheight/browserwidth) > ratio){
 								base.options.fit_landscape && ratio < 1 ? resizeWidth(true) : resizeHeight();	// If landscapes are set to fit
 							} else {
@@ -345,6 +348,7 @@
 							}
 
 						} else if (browserheight <= base.options.min_height){	// If window only smaller than minimum height
+
 
 							if ((browserheight/browserwidth) > ratio){
 								base.options.fit_landscape && ratio < 1 ? resizeWidth() : resizeHeight(true);	// If landscapes are set to fit
