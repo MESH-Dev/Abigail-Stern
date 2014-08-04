@@ -46,8 +46,8 @@
 		// $nextLink = get_permalink($nextP->ID);
 
         $nextPID = $nextP->ID;
-        $nextPName = the_field('project_name', $nextP->ID);
-        $nextPDescription = the_field('project_description', $nextP->ID);
+        $nextPName = get_field('project_name', $nextP->ID);
+        $nextPDescription = get_field('project_description', $nextP->ID);
         $nextPImage1 = get_field('image_1', $nextP->ID)['url'];
         $nextPImage2 = get_field('image_2', $nextP->ID)['url'];
         $nextPImage3 = get_field('image_3', $nextP->ID)['url'];
@@ -57,7 +57,7 @@
 
 
 		//create output
-		$output .= "<div id='work-next' data-id='$nextPID' data-link-'$nextLink'>
+		$output .= "<div id='work-curr' data-id='$nextPID' data-link-'$nextLink'>
                         <div class='project-details'>
                             <h3>$nextPName</h3>
                             <p>$nextPDescription</p>

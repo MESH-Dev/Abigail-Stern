@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+function onLoadFunction() {
 
     // Project Slider
 
@@ -83,4 +83,6 @@ jQuery(document).ready(function($){
         $(".grid").toggle();
         $(".project-thumbnails").toggle("show", function(){});
     });
-});
+};
+
+jQuery(document).ready(onLoadFunction);

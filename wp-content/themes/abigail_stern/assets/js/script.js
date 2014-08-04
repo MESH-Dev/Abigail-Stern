@@ -31,36 +31,39 @@ jQuery(document).ready(function($){
 	$('.rightarrow').on('click',next_slide);
 	$('.leftarrow').on('click',prev_slide);
 
+	$("#work-prev").hide();
+	$("#work-next").hide();
+
 	function next_slide(){
-		$('.rightarrow, .leftarrow').off();
+
 		$action = 'next-slide';
+
 		$prevID = $('#work-prev').attr('data-id');
 		$thisID = $('#work-curr').attr('data-id');
 		$nextID = $('#work-next').attr('data-id');
 
+		console.log("prev: " + $prevID);
+		console.log("curr: " + $thisID);
+		console.log("next: " + $nextID);
+
 		//Do the Anim
-		$('#work-slides').animate({
-			left: "-=810"
-		},300,function(){
+
 			//Callback for AJAX
 			$.ajax({
 			  type: "POST",
 			  url: $themeDir+"slideAjax.php",
 			  data: { action: $action, nextID: $nextID, curID: $thisID, prevID: $prevID }
 			}).done(function(msg) {
+
+			    pageurl=$('#work-prev').attr('data-link');
+				console.log("pageurl: " + pageurl);
 				console.log("msg: " + msg);
-			    pageurl=$('#work-next').attr('data-link');
 
 				//Reconstruct stage
-			    $('#work-prev').remove();
-			    $('#work-curr').attr('id','work-prev');
-			    $('#work-next').attr('id','work-curr');
-			    $(msg).appendTo('#work-slides');
-			    $('#work-slides').css('left','-810px');
 
-				//Set click event
-				$('.rightarrow').on('click',next_slide);
-				$('.leftarrow').on('click',prev_slide);
+				$("#work-curr").fadeOut(300, function() { $(this).remove(); });
+
+				$(msg).appendTo('#work-slides');
 
 				//HTML5 URL change
 			    if(pageurl!=window.location){
@@ -69,7 +72,7 @@ jQuery(document).ready(function($){
 		        //return false;
 
 			  });
-		});
+
 	}
 
 	function prev_slide(){
