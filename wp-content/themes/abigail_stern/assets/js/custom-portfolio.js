@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
               random					: 	0,			// Randomize slide order (Ignores start slide)
               slide_interval          :   3000,		// Length between transitions
               transition              :   6, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-              transition_speed		:	10000,		// Speed of transition
+              transition_speed		:	1000,		// Speed of transition
               new_window				:	1,			// Image links open in new window/tab
               pause_hover             :   0,			// Pause slideshow on hover
               keyboard_nav            :   1,			// Keyboard navigation on/off
