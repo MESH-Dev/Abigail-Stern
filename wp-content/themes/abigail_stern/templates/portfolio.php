@@ -9,7 +9,7 @@ Template Name: Portfolio
 
 <?php get_template_part('partials/portfolio', 'sidebar'); ?>
 
-<a id="prevslide" class="load-item"></a>
+<!-- <a id="prevslide" class="load-item"></a>
 <a id="nextslide" class="load-item"></a>
 
 <ul id="projects" style="display:none">
@@ -19,7 +19,7 @@ Template Name: Portfolio
 
           $imageArray = get_field('swim');
           $imageSwimURL = $imageArray['url'];
-          echo '<img src="' . $imageSwimURL . '" />';
+          echo '<img src="' . $imageSwimURL . '"  />';
     } ?>
     </li>
 
@@ -38,11 +38,37 @@ Template Name: Portfolio
 
           $imageArray = get_field('outerwear');
           $imageOuterwearURL = $imageArray['url'];
-          echo '<img src="' . $imageOuterwearURL . '" />';
+          echo '<img src="' . $imageOuterwearURL . '"  />';
 
     } ?>
     </li>
 
-</ul>
+</ul> -->
+
+<div id="makeMeScrollable">
+
+    <?php if(get_field('swim')) {
+
+        $imageArray = get_field('swim');
+        $imageSwimURL = $imageArray['url'];
+        echo '<img src="' . $imageSwimURL . '" id="swim" />';
+    }
+
+    if(get_field('lingerie')) {
+
+          $imageArray = get_field('lingerie');
+          $imageLingerieURL = $imageArray['url'];
+          echo '<img src="' . $imageLingerieURL . '" id="lingerie" />';
+
+    }
+
+    if(get_field('outerwear')) {
+
+          $imageArray = get_field('outerwear');
+          $imageOuterwearURL = $imageArray['url'];
+          echo '<img src="' . $imageOuterwearURL . '" id="outerwear" />';
+    } ?>
+
+</div>
 
 <?php get_footer(); ?>

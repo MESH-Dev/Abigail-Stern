@@ -14,6 +14,9 @@
 
     if ( basename( get_page_template() ) == 'portfolio.php' ) {
          wp_enqueue_script( 'PortfolioScript', get_template_directory_uri().'/assets/js/custom-portfolio.js', array(), '1.0.0', true);
+         wp_enqueue_script( 'Portfolio1Script', get_template_directory_uri().'/assets/js/jquery.kinetic.min.js', array(), '1.0.0', true);
+         wp_enqueue_script( 'Portfolio2Script', get_template_directory_uri().'/assets/js/jquery.mousewheel.min.js', array(), '1.0.0', true);
+         wp_enqueue_script( 'Portfolio3Script', get_template_directory_uri().'/assets/js/jquery.smoothdivscroll-1.3-min.js', array(), '1.0.0', true);
     };
 
   }
@@ -75,17 +78,5 @@ function siblings($link) {
     if ($link == 'before' || $link == 'after') { echo $closest[$link]; } else { return $closest; }
 }
 
-add_action( 'wp_ajax_my_action', 'portfolio_ajax' );
-add_action( 'wp_ajax_nopriv_my_action', 'portfolio_ajax' );
-
-function portfolio_ajax() {
-    $nextID = $_POST['nextID'];
-
-    $post = get_post($nextID);
-
-    echo $post;
-
-	die(); // this is required to return a proper result
-}
 
 ?>
