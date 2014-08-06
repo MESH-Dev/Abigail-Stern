@@ -74,6 +74,10 @@ function onLoadFunction() {
         $(".plus").toggle();
         $(".minus").toggle();
         $(".project-details").toggle("show", function(){});
+
+        if($('.project-thumbnails').is(':visible')) {
+            $(".project-thumbnails").toggle("show", function(){});
+        }
     });
 
     $(".square").hide();
@@ -82,6 +86,10 @@ function onLoadFunction() {
         $(".square").toggle();
         $(".grid").toggle();
         $(".project-thumbnails").toggle("show", function(){});
+
+        if($('.project-details').is(':visible')) {
+            $(".project-details").toggle("show", function(){});
+        }
     });
 };
 

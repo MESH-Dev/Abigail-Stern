@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
-<?php
+<!-- <?php
 $videoArray = get_field('video');
 $video = $videoArray['url'];
-?>
+?> -->
 
 <div id="background-panel">
 	<video id="videoBG" autoplay preload loop>
-		<source src="<?php echo $video ?>" type="video/mp4">
+		<source src="<?php bloginfo('template_url') ?>/assets/girl.mp4" type="video/mp4">
 		<!--<source src="/assets/video.ogg" type="video/ogg">!-->
 		Sorry Charlie, check this out in a Webkit browser instead.
 	</video>
